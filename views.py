@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.template import Context
 from blog.models import Blog
 from features.models import Event, BookOfTheMonth
+from EoSGP201011.forms import ContactForm
 from django.http import HttpResponse
 from datetime import datetime
 
