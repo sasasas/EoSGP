@@ -1,0 +1,69 @@
+Home
+	Top banner
+		Image, logo
+	Left bar
+		Main menu: title, list(5 links)
+		Archive menu: title, list(links by year & month)	
+	Central trunk
+		Image(slideshow)
+		Blog: title, date, subtitle, text
+	Right bar
+		Features: title, 3<p>
+	Foot banner
+		Left: text
+		Right: text
+
+About
+	Top banner
+		Image, logo
+	Left bar
+		Main menu: title, list(5 links), sublist(3 links)
+	Central trunk
+		Content: Title, multiple/optional[subtitle, text]
+	Right bar
+		Features: title, 3<p>
+	Foot banner
+		Left: text
+		Right: text
+
+Events
+	Top banner
+		Image, logo
+	Left bar
+		Main menu: title, list(5 links)
+	Central trunk
+		Content: Title, text by list or para
+	Right bar
+		Features: title, 3<p>
+	Foot banner
+		Left: text
+		Right: text
+
+Contact
+	Top banner
+		Image, logo
+	Left bar
+		Main menu: title, list(5 links)
+	Central trunk
+		Content: Title, text or form?
+	Right bar
+		Features: title, 3<p>
+	Foot banner
+		Left: text
+		Right: text
+
+Resources
+	Top banner
+		Image, logo
+	Left bar
+		Main menu: title, list(5 links), sublist(3 links)
+	Central trunk
+		Content: title, resources(audio?/video?/text)
+	Right bar
+		Features: title, 3<p>
+	Foot banner
+		Left: text
+		Right: text
+
+
+

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block sidebar1_extra %}
+   <div id="archive_title"><img src="/static/archive_red.png" alt="" width="190px"/></div>
+<div id="archive">January<br />
+        February<br />
+        March<br />
+	</div>
+{% endblock %}
+
+{% block central_trunk %}
+<div id="slider">
+	<img src="/static/slide1.png" alt="" width=545px />
+	<img src="/static/slide2.png" alt="" width=545px />
+	<img src="/static/slide3.png" alt="" width=545px />
+	<img src="/static/slide4.png" alt="" width=545px />
+</div>
+	<img src="/static/blog_red.png" />
+  	<div id="blog_title">
+    <h1>{{ latest_blog.title }}</h1></div>
+    <p>{{ latest_blog.content }}</p>
+{% endblock %}

@@ -1,0 +1,36 @@
+Models:
+x- Blog (date, user, title, content)
+x- Event (date, time, name, venue, detail)
+x- Book of the month (date, title, author, publisher, reviewer, review, detail)
+x- Author
+- Resource (update, type, title, detail)
+x- About (p1-10: title, content)
+
+URLs:
+- home
+- about: /aims_values, /doctrinal_statement, /members
+- events
+- contact
+- resources: /audio, /video, /literature
+- blog/archive: 
+
+Templates:
+- Base
+- Base_about
+- Home
+- About
+- Events
+- Contact
+- Resources
+- Archive
+
+Views:
+- Display latest blog
+- Display archive menu & link
+
+Apps??
+x- Blog
+- Blog archive
+x- Features
+x- Content
+- Resources

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block central_trunk %}
+<div id="h1_title">
+    <h1>Upcoming Events</h1></div><br />
+	<ul>
+	{% for event in event_list %}
+		<li>	{{ event.name }}<br />
+			{{ event.datetime|date:"P, D j M, Y" }}<br />
+			{{ event.venue }}
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
+	
