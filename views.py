@@ -2,6 +2,7 @@ from django.template.loader import get_template
 from django.shortcuts import render_to_response
 from django.template import Context
 from django.core.context_processors import csrf
+from django.core.mail import mail_admins
 from blog.models import Blog
 from features.models import Event, BookOfTheMonth
 from EoSGP201011.forms import ContactForm
@@ -30,9 +31,16 @@ def events(request):
 	return render_to_response('events.html', {'event_list':event_list})
 
 def contact(request):
-	contact_form = ContactForm()
-	c = locals()
-	c.update(csrf(request))
+	if request.method == 'POST':
+		contact_form = ContactForm(request.POST)
+		c = locals()
+		c.update(csrf(request))
+		if form.is_valid():
+			cd = form.cleaned_data
+			mail_admins(
+				'Partnership: 'cd['church'],
+				'You have received a request from 'cd['name']' at 'cd['church']' (minister: 'cd['name_of_minister']') requesting information on becoming a partner of EoSGP. 
+			)
 	return render_to_response('contact.html', c)
 
 def resources(request, resource):
