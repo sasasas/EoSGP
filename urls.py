@@ -12,7 +12,7 @@ urlpatterns = patterns('',
 	(r'^about/doctrinal_statement/$', views.doctrinal_statement),
 	(r'^events/$', views.events),
 	(r'^contact/$', views.contact),
-	(r'^resources/(?P<resource>\w+)?/$', views.resources),
+	(r'^resources(?:/(?P<resource>\w+))?/$', views.resources),
 	(r'^static/(?P<path>.*)$', 'django.views.static.serve',
         	{'document_root': os.path.join(os.path.dirname(__file__), 'static').replace('\\', '/')
 }),
