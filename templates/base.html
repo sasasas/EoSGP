@@ -20,6 +20,8 @@ $(window).load(function() {
 </script>
 <style type="text/css"> 
 
+
+
 <!-- 
 
 --> 
@@ -35,26 +37,14 @@ $(window).load(function() {
 <body class="thrColElsHdr">
 
 <div id="container">
-  
-<div id="header">
-    <h1><img src="/static/temp_logo.png" alt="" /></h1>
-    <div id="menubar"></div>
-<!-- end #header --></div>
+  <div id="header">
+    <h1><img src="/static/logo3_clear_orange.png" alt="" height=150px /></h1>
+    
+  <!-- end #header --></div>
 
-<div id="sidebar1"><img src="/static/menu_red.png" alt="" width="190px" />
-    <div class="menu"><a href="/home/">HOME</a></div>
-    <div class="menu"><a href="/about/">ABOUT</a></div>
-	{% block about_subs %}{% endblock %}
-    <div class="menu"><a href="/events/">EVENTS</a></div>
-    <div class="menu"><a href="/contact/">CONTACT</a></div>
-    <div class="menu"><a href="/resources/">RESOURCES</a></div>
-	{% block resources_subs %}{% endblock %}
-	{% block sidebar1_extra %}{% endblock %}
-<!-- end #sidebar1 --></div>
-  
   <div id="sidebar2">
-    <div id="latest_news"><img src="/static/latest_news_red.png" alt="" width="190px" />
-<p>	{% if next_event %}
+    <div id="latest_news"><img src="/static/latest_news_orange.png" alt="" width="170px" />
+      	<p>	{% if next_event %}
 			Next Event:<br /> 
 			{{ next_event }}<br />
 			{{ next_event.datetime|date:"j b Y" }}
@@ -66,13 +56,24 @@ $(window).load(function() {
 			{{ book_of_the_month.title }}
 		{% endif %}
 	</p>
-	</div>
+    </div>
   <!-- end #sidebar2 --></div>
-  
-<div id="mainContent">
-  	{% block central_trunk %}{% endblock %}
+  <div id="sidebar1"><img src="/static/menu_orange.png" alt="" width="170px" />
+    <div id="menu"><a href="/home/">Home</a></div>
+    <div id="menu"><a href="/about/">About</a></div>
+		{% block about_subs %}{% endblock %}
+    <div id="menu"><a href="/partners/">Partners</a></div>
+    <div id="menu"><a href="/events/">Events</a></div>
+     <div id="menu"><a href="/apprenticeships/">Apprenticeships</a></div>
+    <div id="menu"><a href="/resources/">Resources</a></div>
+		{% block resources_subs %}{% endblock %}
+     <div id="menu"><a href="/links/">Links</a></div>
+    <div id="menu"><a href="/contact/">Contact/sign-up</a></div>
+		{% block sidebar1_extra %}{% endblock %}
+  <!-- end #sidebar1 --></div>
+  <div id="mainContent">
+		{% block central_trunk %}{% endblock %}
 <!-- end #mainContent --></div>
-
 	<!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats --><br class="clearfloat" />
    <div id="footer">
     <div id="footer_address"><p>East of Scotland Gospel Partnership<br />

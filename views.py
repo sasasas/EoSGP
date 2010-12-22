@@ -20,9 +20,27 @@ def about(request):
 def doctrinal_statement(request):
 	return render_to_response('doctrinal_statement.html', locals(), context_instance=RequestContext(request))
 
+def partners(request):
+	return render_to_response('partners.html', locals(), context_instance=RequestContext(request))
+
 def events(request):
 	event_list = Event.objects.filter(datetime__gte=datetime.now())	
 	return render_to_response('events.html', {'event_list':event_list}, context_instance=RequestContext(request))
+
+def apprenticeships(request):
+	return render_to_response('apprenticeships.html', locals(), context_instance=RequestContext(request))
+
+def resources(request, resource):
+	if resource in ['audio', 'video', 'literature']:
+		filename = 'resources_%s.html' % resource
+	else:
+		filename = 'resources.html'
+	t = get_template(filename)
+	html = t.render(Context())	
+	return HttpResponse(html)
+
+def links(request):
+	return render_to_response('links.html', locals(), context_instance=RequestContext(request))
 
 def contact(request):
 	if request.method == 'POST':
@@ -45,12 +63,5 @@ def contact(request):
 		c.update(csrf(request))
 		return render_to_response('contact.html', c, context_instance=RequestContext(request))
 
-def resources(request, resource):
-	if resource in ['audio', 'video', 'literature']:
-		filename = 'resources_%s.html' % resource
-	else:
-		filename = 'resources.html'
-	t = get_template(filename)
-	html = t.render(Context())	
-	return HttpResponse(html)
+
 	

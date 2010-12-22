@@ -4,11 +4,11 @@
  */
 
 #slider {
-	
 	background:#202834 url(loading.gif) no-repeat 50% 50%;
-	-moz-box-shadow:0px 0px 10px #333;
-	-webkit-box-shadow:0px 0px 10px #333;
-	box-shadow:0px 0px 10px #333;
+	-moz-box-shadow:0px 0px 0px #333;
+	-webkit-box-shadow:0px 0px 0px #333;
+	box-shadow:0px 0px 0px #333;
+	font-family: Verdana, Geneva, sans-serif;
 }
 #slider img {
 	position:absolute;
