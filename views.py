@@ -35,11 +35,11 @@ def contact(request):
 		contact_form = ContactForm(request.POST)
 		c = locals()
 		c.update(csrf(request))
-		if form.is_valid():
-			cd = form.cleaned_data
+		if contact_form.is_valid():
+			cd = contact_form.cleaned_data
 			mail_admins(
-				'Partnership info request: %s' % cd['church'],
-				'You have received a request from %s at %s (minister: %s) for information on becoming a partner of EoSGP. E-mail: %s Address: %s Message: %s Newsletter: %s' % (cd['name'], cd['church'], cd['minister'], cd['email'], cd['address'], cd['message'], cd['newsletter']),
+				'Partnership info request: %s' % cd['church_or_org'],
+				'You have received a request from %s at %s (minister: %s) for information on becoming a partner of EoSGP (%s). E-mail: %s Address: %s Message: %s Newsletter: %s' % (cd['name'], cd['church_or_org'], cd['minister_or_head'], cd['org_type'], cd['email'], cd['address'], cd['message'], cd['newsletter']),
 				fail_silently=False 
 			)
 			return HttpResponseRedirect('/contact/thanks')

@@ -120,4 +120,4 @@ INSTALLED_APPS = (
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = '/emailtestfolder'
+EMAIL_FILE_PATH = '/tmp/emailtestfolder'
