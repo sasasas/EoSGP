@@ -33,8 +33,8 @@ def events(request):
 def contact(request):
 	if request.method == 'POST':
 		contact_form = ContactForm(request.POST)
-		c = locals()
-		c.update(csrf(request))
+#		c = locals()
+#		c.update(csrf(request))
 		if form.is_valid():
 			cd = form.cleaned_data
 			mail_admins(
@@ -44,11 +44,13 @@ def contact(request):
 			)
 			return HttpResponseRedirect('/contact/thanks')
 		else:
-			return render_to_response('contact.html', c)
+			return render_to_response('contact.html')
+#			return render_to_response('contact.html', c)
 	else:
 		contact_form = ContactForm()
-		c = locals()
-		return render_to_response('contact.html', c)
+#		c = locals()
+		return render_to_response('contact.html')
+#		return render_to_response('contact.html', c)
 
 def resources(request, resource):
 	if resource in ['audio', 'video', 'literature']:
