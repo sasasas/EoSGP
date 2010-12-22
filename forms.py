@@ -18,6 +18,6 @@ class ContactForm(forms.Form):
 	minister_or_head = forms.CharField(max_length=50, label='Minister/head of organisation (if applicable)', required=False)
 	email = forms.EmailField()
 	address = forms.CharField(max_length=200, widget=forms.Textarea)
-	message = forms.CharField(required=False, widget=forms.Textarea)
+	message = forms.CharField(widget=forms.Textarea, label='Message (optional)', required=False)
 	newsletter = forms.ChoiceField(choices=NEWSLETTER_CHOICES, widget=forms.RadioSelect, label='Would you like to receive our newsletter to the address you have given us?')
 
