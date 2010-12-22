@@ -3,11 +3,11 @@
 {% block central_trunk %}
 <div id="h1_title">
     <h1>Contact</h1></div><br />
-	<p>Contact details, </p>
-	<p>Please email if you want to join the parntnership or to join email database for regular updates etc...</p>
-	<form action="" method="POST"><!--{% csrf_token %}-->
-	{{ contact_form.as_p }}
-	<input type="submit" name="Submit" value="Submit" />
-	</form>
+	<p>For general enquiries, please email eosgp@gmail.com.</p>
+	<p>If you are interested in becoming an EoSGP partner, please fill in the form below.</p>
+		<form action="" method="POST"><!--{% csrf_token %}-->
+			{{ contact_form.as_p }}
+		<input type="submit" name="Submit" value="Submit" /><!--Remove slash?-->
+		</form>
 {% endblock %}
 	

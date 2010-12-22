@@ -34,22 +34,20 @@ def contact(request):
 	if request.method == 'POST':
 		contact_form = ContactForm(request.POST)
 		c = locals()
-#		c.update(csrf(request))
+		c.update(csrf(request))
 		if form.is_valid():
 			cd = form.cleaned_data
 			mail_admins(
 				'Partnership info request: %s' % cd['church'],
-				'You have received a request from %s at %s (minister: %s) for information on becoming a partner of EoSGP. E-mail: %s Address: %s Message: %s Newsletter: %s' % (cd['name'], cd['church'], cd['name_of_minister'], cd['email'], cd['address'], cd['message'], cd['newsletter']),
+				'You have received a request from %s at %s (minister: %s) for information on becoming a partner of EoSGP. E-mail: %s Address: %s Message: %s Newsletter: %s' % (cd['name'], cd['church'], cd['minister'], cd['email'], cd['address'], cd['message'], cd['newsletter']),
 				fail_silently=False 
 			)
 			return HttpResponseRedirect('/contact/thanks')
 		else:
-#			return render_to_response('contact.html')
 			return render_to_response('contact.html', c)
 	else:
 		contact_form = ContactForm()
 		c = locals()
-#		return render_to_response('contact.html')
 		return render_to_response('contact.html', c)
 
 def resources(request, resource):
