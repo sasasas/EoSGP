@@ -111,5 +111,5 @@ INSTALLED_APPS = (
 	'EoSGP201011.features',
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = '/tmp/emailtestfolder'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
