@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+import os
 from EoSGP201011 import views
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -11,12 +12,10 @@ urlpatterns = patterns('',
 	(r'^about/doctrinal_statement/$', views.doctrinal_statement),
 	(r'^events/$', views.events),
 	(r'^contact/$', views.contact),
-	(r'^resources/$', views.resources),
-	(r'^resources/audio/$', views.resources_audio),
-	(r'^resources/video/$', views.resources_video),
-	(r'^resources/literature/$', views.resources_literature),
+	(r'^resources/(?P<resource>\w+)?$', views.resources),
 	(r'^static/(?P<path>.*)$', 'django.views.static.serve',
-        	{'document_root': '/home/sasasas/webwork/EoSGP201011/static'}),
+        	{'document_root': os.path.join(os.path.dirname(__file__), 'static').replace('\\', '/')
+}),
 	#(r'^about/members/$', views.members),
 	#(r'^blog_archive/$', views.blog_archive),
 	

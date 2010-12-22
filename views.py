@@ -33,24 +33,12 @@ def contact(request):
 	html = t.render(Context())	
 	return HttpResponse(html)
 
-def resources(request):
-	t = get_template('resources.html')
+def resources(request, resource):
+	if resource in ['audio', 'video', 'literature']:
+		filename = 'resources_%s.html' % resource
+	else:
+		filename = 'resources.html'
+	t = get_template(filename)
 	html = t.render(Context())	
 	return HttpResponse(html)
-
-def resources_audio(request):
-	t = get_template('resources_audio.html')
-	html = t.render(Context())	
-	return HttpResponse(html)
-
-def resources_video(request):
-	t = get_template('resources_video.html')
-	html = t.render(Context())	
-	return HttpResponse(html)
-
-def resources_literature(request):
-	t = get_template('resources_literature.html')
-	html = t.render(Context())	
-	return HttpResponse(html)
-
 	
