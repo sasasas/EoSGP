@@ -29,9 +29,8 @@ def events(request):
 	return render_to_response('events.html', {'event_list':event_list})
 
 def contact(request):
-	t = get_template('contact.html')
-	html = t.render(Context())	
-	return HttpResponse(html)
+	contact_form = ContactForm()
+	return render_to_response('contact.html', locals())
 
 def resources(request, resource):
 	if resource in ['audio', 'video', 'literature']:
