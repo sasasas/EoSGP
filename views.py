@@ -38,10 +38,18 @@ def contact(request):
 		if form.is_valid():
 			cd = form.cleaned_data
 			mail_admins(
-				'Partnership: 'cd['church'],
-				'You have received a request from 'cd['name']' at 'cd['church']' (minister: 'cd['name_of_minister']') requesting information on becoming a partner of EoSGP. E-mail: 'cd['email']' Address: 'cd['address']' Message: 'cd['message']' Newsletter: 'cd['newsletter'],
-				 
+				'Partnership: %s ' % cd['church'],
+				'You have received a request from %s at %s (minister: %s) requesting information on becoming a partner of EoSGP. ' % (
+					cd['name'], cd['church'], cd['name_of_minister']
+				)
 			)
+#
+#mail_admins(
+#				'Partnership: 'cd['church'],
+#				'You have received a request from 'cd['name']' at 'cd['church']' (minister: 'cd['name_of_minister']') requesting information on becoming a partner of EoSGP. E-mail: 'cd['email']' Address: 'cd['address']' Message: 'cd['message']' Newsletter: 'cd['newsletter'],
+#				 
+#			)
+#
 			return HttpResponseRedirect('/contact/thanks')
 		else:
 			return render_to_response('contact.html', c)
