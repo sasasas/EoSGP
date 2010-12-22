@@ -48,6 +48,7 @@ def contact(request):
 	else:
 		contact_form = ContactForm()
 		c = locals()
+		c.update(csrf(request))
 		return render_to_response('contact.html', c)
 
 def resources(request, resource):
