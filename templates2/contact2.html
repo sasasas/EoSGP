@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block central_trunk %}
+<div id="h1_title">
+    <h1>Contact</h1></div>
+	<p>For general enquiries, please email eosgp@gmail.com.</p>
+	<p>If you are interested in becoming an EoSGP partner, please fill in the form below.</p>
+
+		{% if form.errors %}
+			<p style="color: red;">
+				Please correct the error{{ form.errors|pluralize }} below.
+			</p>
+		{% endif %}		
+
+	<form action="" method="POST"><!--{% csrf_token %}-->
+		{{ contact_form.as_p }}
+		<input type="submit" name="Submit" value="Submit" /><!--Remove slash?-->
+	</form>
+{% endblock %}
+	
