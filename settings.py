@@ -93,6 +93,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
+    'EoSGP201011.context_processors.grab_latest_news',
 #    'django.contrib.staticfiles.context_processors.staticfiles',
 )
 

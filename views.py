@@ -1,7 +1,8 @@
 from django.template.loader import get_template
 from django.shortcuts import render_to_response
-from django.template import Context
+from django.template import Context, RequestContext
 from django.core.context_processors import csrf
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import mail_admins
 from blog.models import Blog
 from features.models import Event, BookOfTheMonth
@@ -10,25 +11,18 @@ from django.http import HttpResponse, HttpResponseRedirect
 from datetime import datetime
 
 def home(request):
-	next_event = Event.objects.filter(datetime__gte=datetime.now())[0]
-	books_currentyear = BookOfTheMonth.objects.filter(date__year=datetime.now().year)	
-	book_of_the_month = books_currentyear.get(date__month=datetime.now().month)
 	latest_blog = Blog.objects.all()[0]
-	return render_to_response('home.html', locals())
+	return render_to_response('home.html', locals(), context_instance=RequestContext(request))
 
 def about(request):
-	t = get_template('about.html')
-	html = t.render(Context())	
-	return HttpResponse(html)
+	return render_to_response('about.html', locals(), context_instance=RequestContext(request))
 
 def doctrinal_statement(request):
-	t = get_template('doctrinal_statement.html')
-	html = t.render(Context())	
-	return HttpResponse(html)
+	return render_to_response('doctrinal_statement.html', locals(), context_instance=RequestContext(request))
 
 def events(request):
 	event_list = Event.objects.filter(datetime__gte=datetime.now())	
-	return render_to_response('events.html', {'event_list':event_list})
+	return render_to_response('events.html', {'event_list':event_list}, context_instance=RequestContext(request))
 
 def contact(request):
 	if request.method == 'POST':
@@ -44,12 +38,12 @@ def contact(request):
 			)
 			return HttpResponseRedirect('/contact/thanks')
 		else:
-			return render_to_response('contact.html', c)
+			return render_to_response('contact.html', c, context_instance=RequestContext(request))
 	else:
 		contact_form = ContactForm()
 		c = locals()
 		c.update(csrf(request))
-		return render_to_response('contact.html', c)
+		return render_to_response('contact.html', c, context_instance=RequestContext(request))
 
 def resources(request, resource):
 	if resource in ['audio', 'video', 'literature']:
