@@ -12,6 +12,7 @@ NEWSLETTER_CHOICES = (
 )
 
 class ContactForm(forms.Form):
+	required_css_class = 'required'
 	org_type = forms.ChoiceField(choices=ORG_TYPE_CHOICES, widget=forms.RadioSelect, label='Are you contacting EoSGP as')	
 	name = forms.CharField(max_length=50)
 	church_or_org = forms.CharField(max_length=100, label='Church/Organization', required=False)
