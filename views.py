@@ -53,8 +53,6 @@ def contact(request):
 			return render_to_response('contact.html', {'contact_form':contact_form}, context_instance=RequestContext(request))
 	else:
 		contact_form = ContactForm()
-		c = locals()
-		c.update(csrf(request))
 		return render_to_response('contact.html', {'contact_form':contact_form}, context_instance=RequestContext(request))
 
 
