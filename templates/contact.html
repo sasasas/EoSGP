@@ -2,12 +2,23 @@
 
 {% block central_trunk %}
 <div id="h1_title">
-    <h1>Contact</h1></div><br />
+<h1>Contact</h1></div>
+<div class="no_bullets" >
 	<p>For general enquiries, please email eosgp@gmail.com.</p>
 	<p>If you are interested in becoming an EoSGP partner, please fill in the form below.</p>
-		<form action="" method="POST">{% csrf_token %}
-			{{ contact_form.as_p }}
+
+		{% if contact_form.errors %}
+			<p style="color: red;">
+				Please correct the error{{ contact_form.errors|pluralize }} below.
+			</p>
+		{% endif %}		
+
+	<form action="" method="POST">{% csrf_token %}
+		<table>
+			{{ contact_form.as_table }}
+		</table>
 		<input type="submit" name="Submit" value="Submit" />
-		</form>
+	</form>
+</div>
 {% endblock %}
 	

@@ -185,3 +185,12 @@ body  {
 	border-top: 2px solid #ddd;
 	border-bottom: 2px solid #ddd;
 }
+
+.errorlist {
+	font-size: small;	
+	color: red;
+}
+
+.no_bullets ul{
+	list-style-type: none;
+}
