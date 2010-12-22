@@ -94,14 +94,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
     'EoSGP201011.context_processors.grab_latest_news',
-#    'django.contrib.staticfiles.context_processors.staticfiles',
 )
-
-
-#STATICFILES_FINDERS = (
-#	"django.contrib.staticfiles.finders.FileSystemFinder",
-#	"django.contrib.staticfiles.finders.AppDirectoriesFinder"
-#)
 
 STATIC_DOC_ROOT = 	os.path.join(os.path.dirname(__file__), 'static').replace('\\', '/'),
 
@@ -112,9 +105,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-	#'django.contrib.staticfiles',
 	'EoSGP201011.blog',
 	'EoSGP201011.content',
 	'EoSGP201011.features',

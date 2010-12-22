@@ -1,13 +1,11 @@
-from django.template.loader import get_template
 from django.shortcuts import render_to_response
-from django.template import Context, RequestContext
-from django.core.context_processors import csrf
-from django.core.exceptions import ObjectDoesNotExist
+from django.template import RequestContext
 from django.core.mail import mail_admins
 from blog.models import Blog
 from features.models import Event, BookOfTheMonth
 from EoSGP201011.forms import ContactForm
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
+from django.views.generic.simple import direct_to_template
 from datetime import datetime
 
 def home(request):
@@ -15,7 +13,7 @@ def home(request):
 	return render_to_response('home.html', locals(), context_instance=RequestContext(request))
 
 def about(request):
-	return render_to_response('about.html', locals(), context_instance=RequestContext(request))
+	return direct_to_template(request, 'about.html')
 
 def doctrinal_statement(request):
 	return render_to_response('doctrinal_statement.html', locals(), context_instance=RequestContext(request))
@@ -35,9 +33,7 @@ def resources(request, resource):
 		filename = 'resources_%s.html' % resource
 	else:
 		filename = 'resources.html'
-	t = get_template(filename)
-	html = t.render(Context())	
-	return HttpResponse(html)
+	return render_to_response(filename, {}, context_instance=RequestContext(request))
 
 def links(request):
 	return render_to_response('links.html', locals(), context_instance=RequestContext(request))
@@ -45,8 +41,6 @@ def links(request):
 def contact(request):
 	if request.method == 'POST':
 		contact_form = ContactForm(request.POST)
-		c = locals()
-		c.update(csrf(request))
 		if contact_form.is_valid():
 			cd = contact_form.cleaned_data
 			mail_admins(
@@ -56,12 +50,12 @@ def contact(request):
 			)
 			return HttpResponseRedirect('/contact/thanks')
 		else:
-			return render_to_response('contact.html', c, context_instance=RequestContext(request))
+			return render_to_response('contact.html', {'contact_form':contact_form}, context_instance=RequestContext(request))
 	else:
 		contact_form = ContactForm()
 		c = locals()
 		c.update(csrf(request))
-		return render_to_response('contact.html', c, context_instance=RequestContext(request))
+		return render_to_response('contact.html', {'contact_form':contact_form}, context_instance=RequestContext(request))
 
 
 	
