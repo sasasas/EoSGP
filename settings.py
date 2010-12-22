@@ -1,4 +1,5 @@
 # Django settings for EoSGP201011 project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -82,7 +83,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-	'/home/sasasas/webwork/EoSGP201011/templates',
+	os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -95,20 +96,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 
-#STATICFILES_ROOT = "/home/sasasas/webwork/EoSGP201011/static/"
-
-#STATICFILES_URL = '/static/'
-
-#STATICFILES_DIRS = (
-#	"/home/sasasas/webwork/EoSGP201011/graphics/",
-#)
-
 #STATICFILES_FINDERS = (
 #	"django.contrib.staticfiles.finders.FileSystemFinder",
 #	"django.contrib.staticfiles.finders.AppDirectoriesFinder"
 #)
 
-STATIC_DOC_ROOT = '/home/sasasas/webwork/EoSGP201011/static/'
+STATIC_DOC_ROOT = 	os.path.join(os.path.dirname(__file__), 'static').replace('\\', '/'),
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
