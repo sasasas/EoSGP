@@ -7,7 +7,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    	(r'^(?:home)?/$', views.home),
+    	(r'^(?:home/)?$', views.home),
 	(r'^about/$', views.about),
 	(r'^partners/$', views.partners),
 	(r'^about/aims_values/$', views.about),
