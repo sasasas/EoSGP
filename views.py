@@ -6,7 +6,7 @@ from django.core.mail import mail_admins
 from blog.models import Blog
 from features.models import Event, BookOfTheMonth
 from EoSGP201011.forms import ContactForm
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from datetime import datetime
 
 def home(request):
@@ -41,7 +41,13 @@ def contact(request):
 				'Partnership: 'cd['church'],
 				'You have received a request from 'cd['name']' at 'cd['church']' (minister: 'cd['name_of_minister']') requesting information on becoming a partner of EoSGP. 
 			)
-	return render_to_response('contact.html', c)
+			return HttpResponseRedirect('/contact/thanks')
+		else:
+			return render_to_response('contact.html', c)
+	else:
+		contact_form = ContactForm()
+		c = locals()
+		return render_to_response('contact.html', c)
 
 def resources(request, resource):
 	if resource in ['audio', 'video', 'literature']:
