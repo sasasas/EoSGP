@@ -1,6 +1,7 @@
 from django.template.loader import get_template
 from django.shortcuts import render_to_response
 from django.template import Context
+from django.core.context_processors import csrf
 from blog.models import Blog
 from features.models import Event, BookOfTheMonth
 from EoSGP201011.forms import ContactForm
@@ -30,7 +31,9 @@ def events(request):
 
 def contact(request):
 	contact_form = ContactForm()
-	return render_to_response('contact.html', locals())
+	c = locals()
+	c.update(csrf(request))
+	return render_to_response('contact.html', c)
 
 def resources(request, resource):
 	if resource in ['audio', 'video', 'literature']:
