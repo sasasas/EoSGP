@@ -1,9 +1,9 @@
 from django import forms
 
 ORG_TYPE_CHOICES = (
-	('individual', 'An Individual?'),
-	('church', 'A Church?'),
-	('other', 'An Organisation?'),
+	('individual', 'an individual?'),
+	('church', 'a church?'),
+	('other', 'an organisation?'),
 )
 
 NEWSLETTER_CHOICES = (
