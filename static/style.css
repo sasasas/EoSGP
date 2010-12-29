@@ -122,7 +122,7 @@ body  {
     line-height: 0px;
 }
 
-#menu {
+.menu {
 	width: 9em;
 	height: 1.5em;
 	text-align: left;
@@ -130,10 +130,20 @@ body  {
 	border-bottom: 1px dashed #000;
 }
 
-#submenu {
+.menu a {
+	color: black;
+	text-decoration: none;
+}
+
+.submenu {
 	font-size: 90%;	
 	padding-left: 30px;
 	color:#cd0101;
+}
+
+.submenu a {
+	color: black;
+	text-decoration: none;
 }
 
 #archive_title {
