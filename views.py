@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.core.mail import mail_admins
 from blog.models import Blog
 from features.models import Event, BookOfTheMonth
+from content.models import About
 from EoSGP201011.forms import ContactForm
 from django.http import HttpResponseRedirect
 from django.views.generic.simple import direct_to_template
@@ -13,7 +14,8 @@ def home(request):
 	return render_to_response('home.html', locals(), context_instance=RequestContext(request))
 
 def about(request):
-	return direct_to_template(request, 'about.html')
+	about_list = About.objects.all()
+	return render_to_response('about.html', {'about_list':about_list}, context_instance=RequestContext(request))
 
 def doctrinal_statement(request):
 	return render_to_response('doctrinal_statement.html', locals(), context_instance=RequestContext(request))

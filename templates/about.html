@@ -1,8 +1,12 @@
 {% extends "base_about.html" %}
    
-{% block central_trunk %}    
-<div id="h1_title"><h1>Aims and Values</h1></div>
-    <h2>Why do we exist?</h2><br />
+{% block central_trunk %}   
+<div id="h1_title"><h1>Aims and Values</h1></div><br /> 
+	{% for about in about_list %}
+		<h2>{{ about.subtitle }}</h2><br />
+		<p>{{ about.content }}<p><br />
+	{% endfor %}
+<!--    <h2>Why do we exist?</h2><br />
       We exist to glorify God by:<br />
       &#8226; Expanding gospel ministry in the East of Scotland; <br />
       &#8226; Encouraging Bible believing evangelicals to contend for Biblical Christianity <br />
@@ -39,5 +43,5 @@
        &#8226; Starting congregations in areas where gospel ministry is weak or non-existent:<br />
        &#8226; arranging regular opportunities for Church leaders to meet for mutual support, encouragement, prayer, and ongoing ministry training</p>
      </p>
-    <h2>&nbsp;</h2>
+    <h2>&nbsp;</h2>-->
 {% endblock %}	
