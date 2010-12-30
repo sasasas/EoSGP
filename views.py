@@ -26,6 +26,8 @@ def doctrinal_statement(request):
 	return render_to_response('doctrinal_statement.html', {'doctrinal_statement_list':doctrinal_statement_list}, context_instance=RequestContext(request))
 
 def partners(request):
+	partners_blurb = PartnersBlurb.objects.all()
+	partner_list = Partner.objects.all()
 	return render_to_response('partners.html', locals(), context_instance=RequestContext(request))
 
 def events(request):
@@ -33,7 +35,8 @@ def events(request):
 	return render_to_response('events.html', {'event_list':event_list}, context_instance=RequestContext(request))
 
 def apprenticeships(request):
-	return render_to_response('apprenticeships.html', locals(), context_instance=RequestContext(request))
+	apprenticeship_list = Apprenticeship.objects.all()
+	return render_to_response('apprenticeships.html', {'apprenticeship_list':apprenticeship_list}, context_instance=RequestContext(request))
 
 def resources(request, resource):
 	if resource in ['audio', 'video', 'literature']:
