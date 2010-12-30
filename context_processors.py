@@ -5,7 +5,7 @@ from features.models import Event, BookOfTheMonth
 def grab_latest_news(request):
 	try:
 		next_event = Event.objects.filter(datetime__gte=datetime.now())[0]
-	except ObjectDoesNotExist:
+	except (ObjectDoesNotExist, IndexError):
 		pass
 	try:
 		books_currentyear = BookOfTheMonth.objects.filter(date__year=datetime.now().year)	

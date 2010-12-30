@@ -1,16 +1,20 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.mail import mail_admins
+from django.core.exceptions import ObjectDoesNotExist
 from blog.models import Blog
 from features.models import LatestNewsShout, Event, BookOfTheMonth
-from content.models import About, DoctrinalStatement, Apprenticeship, Links Blurb, Link, PartnersBlurb, Partner
+from content.models import About, DoctrinalStatement, Apprenticeship, LinksBlurb, Link, PartnersBlurb, Partner
 from EoSGP201011.forms import ContactForm
 from django.http import HttpResponseRedirect
 from django.views.generic.simple import direct_to_template
 from datetime import datetime
 
 def home(request):
-	latest_blog = Blog.objects.all()[0]
+	try:
+		latest_blog = Blog.objects.all()[0]
+	except (ObjectDoesNotExist, IndexError):
+		pass
 	return render_to_response('home.html', locals(), context_instance=RequestContext(request))
 
 def about(request):
