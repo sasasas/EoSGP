@@ -21,6 +21,9 @@ urlpatterns = patterns('',
 	(r'^static/(?P<path>.*)$', 'django.views.static.serve',
         	{'document_root': os.path.join(os.path.dirname(__file__), 'static').replace('\\', '/')
 }),
+	(r'^uploaded_graphics/(?P<path>.*)$', 'django.views.static.serve',
+        	{'document_root': os.path.join(os.path.dirname(__file__), 'uploaded_graphics').replace('\\', '/')
+}),
 	#(r'^about/members/$', views.members),
 	#(r'^blog_archive/$', views.blog_archive),
 	
