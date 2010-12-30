@@ -24,7 +24,7 @@ class DoctrinalStatement(models.Model):
 
 class Apprenticeship(models.Model):
 	paragraph_number = models.IntegerField()
-	subtitle = models.CharField(max_length=100, null=True)
+	subtitle = models.CharField(max_length=100, null=True, blank=True)
 	content = models.TextField()
 
 	def __unicode__(self):
@@ -35,7 +35,7 @@ class Apprenticeship(models.Model):
 
 class LinksBlurb(models.Model):
 	paragraph_number = models.IntegerField()
-	subtitle = models.CharField(max_length=100, null=True)
+	subtitle = models.CharField(max_length=100, null=True, blank=True)
 	content = models.TextField()
 
 	def __unicode__(self):
@@ -57,8 +57,8 @@ class Link(models.Model):
 
 class PartnersBlurb(models.Model):
 	paragraph_number = models.IntegerField()
-	subtitle = models.CharField(max_length=100, null=True)
-	content = models.TextField()
+	subtitle = models.CharField(max_length=100, null=True, blank=True)
+	content = models.TextField(null=True, blank=True)
 
 	def __unicode__(self):
 		return "%d" % self.paragraph_number
@@ -68,11 +68,11 @@ class PartnersBlurb(models.Model):
 
 class Partner(models.Model):
 	name = models.CharField(max_length=100)
-	address = models.TextField(null=True)
-	town = models.CharField(max_length=25, null=True)
-	postcode = models.CharField(max_length=10, null=True)
-	telephone = models.CharField(max_length=15, null=True)
-	email = models.EmailField(null=True)
+	address = models.TextField(null=True, blank=True)
+	town = models.CharField(max_length=25, null=True, blank=True)
+	postcode = models.CharField(max_length=10, null=True, blank=True)
+	telephone = models.CharField(max_length=15, null=True, blank=True)
+	email = models.EmailField(null=True, blank=True)
 	
 	def __unicode__(self):
 		return self.name
