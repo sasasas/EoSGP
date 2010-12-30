@@ -6,7 +6,7 @@ class About(models.Model):
 	content = models.TextField()
 
 	def __unicode__(self):
-		return self.paragraph_number
+		return "%d" % self.paragraph_number
 
 	class Meta:
 		ordering = ['paragraph_number']
@@ -17,7 +17,7 @@ class DoctrinalStatement(models.Model):
 	content = models.TextField()
 
 	def __unicode__(self):
-		return self.paragraph_number
+		return "%d" % self.paragraph_number
 
 	class Meta:
 		ordering = ['paragraph_number']
@@ -28,7 +28,7 @@ class Apprenticeship(models.Model):
 	content = models.TextField()
 
 	def __unicode__(self):
-		return self.paragraph_number
+		return "%d" % self.paragraph_number
 
 	class Meta:
 		ordering = ['paragraph_number']
@@ -39,7 +39,7 @@ class LinksBlurb(models.Model):
 	content = models.TextField()
 
 	def __unicode__(self):
-		return self.paragraph_number
+		return "%d" % self.paragraph_number
 
 	class Meta:
 		ordering = ['paragraph_number']
@@ -61,7 +61,7 @@ class PartnersBlurb(models.Model):
 	content = models.TextField()
 
 	def __unicode__(self):
-		return self.paragraph_number
+		return "%d" % self.paragraph_number
 
 	class Meta:
 		ordering = ['paragraph_number']
