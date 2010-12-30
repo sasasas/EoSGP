@@ -1,4 +1,7 @@
 from django.db import models
+from django.core.files.storage import FileSystemStorage
+
+fs = FileSystemStorage()
 
 class LatestNewsShout(models.Model):
 	paragraph_number = models.IntegerField()
@@ -40,6 +43,7 @@ class BookOfTheMonth(models.Model):
 	reviewer = models.CharField(max_length=30)
 	review = models.TextField()
 	detail = models.TextField(blank=True)
+	cover_image = models.ImageField(null=True, upload_to='book_covers', storage=fs)
 
 	def __unicode__(self):
 		return self.title
