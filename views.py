@@ -2,8 +2,8 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.mail import mail_admins
 from blog.models import Blog
-from features.models import Event, BookOfTheMonth
-from content.models import About
+from features.models import LatestNewsShout, Event, BookOfTheMonth
+from content.models import About, DoctrinalStatement, Apprenticeship, Links Blurb, Link, PartnersBlurb, Partner
 from EoSGP201011.forms import ContactForm
 from django.http import HttpResponseRedirect
 from django.views.generic.simple import direct_to_template

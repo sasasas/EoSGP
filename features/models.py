@@ -1,5 +1,16 @@
 from django.db import models
 
+class LatestNewsShout(models.Model):
+	paragraph_number = models.IntegerField()
+	subtitle = models.CharField(max_length=100, null=True)
+	content = models.TextField()
+
+	def __unicode__(self):
+		return self.paragraph_number
+
+	class Meta:
+		ordering = ['paragraph_number']
+
 class Event(models.Model):
 	datetime = models.DateTimeField()
 	name = models.CharField(max_length=100)
