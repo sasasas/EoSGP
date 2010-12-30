@@ -2,7 +2,7 @@
 {% load markup %}
    
 {% block central_trunk %}   
-<h1 id="h1_title">Aims and Values</h1>
+<div id="h1_title"><h1>Aims and Values</h1></div>
 	{% for about in about_list %}
 		{%if about.subtitle %}<h2>{{ about.subtitle }}</h2>{%endif%}
 		{{ about.content|markdown }}
