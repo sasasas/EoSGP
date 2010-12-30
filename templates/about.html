@@ -1,10 +1,11 @@
 {% extends "base_about.html" %}
+{% load markup %}
    
 {% block central_trunk %}   
 <div id="h1_title"><h1>Aims and Values</h1></div><br /> 
 	{% for about in about_list %}
 		<h2>{{ about.subtitle }}</h2><br />
-		<p>{{ about.content }}<p><br />
+		<p>{{ about.content|markdown }}<p><br />
 	{% endfor %}
 <!--    <h2>Why do we exist?</h2><br />
       We exist to glorify God by:<br />
