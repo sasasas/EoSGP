@@ -9,7 +9,7 @@ class LatestNewsShout(models.Model):
 	content = models.TextField()
 
 	def __unicode__(self):
-		return self.paragraph_number
+		return "%d" % self.paragraph_number
 
 	class Meta:
 		ordering = ['paragraph_number']

@@ -44,16 +44,25 @@ $(window).load(function() {
 
   <div id="sidebar2">
     <div id="latest_news"><img src="/static/latest_news_orange.png" alt="" width="170px" />
+		{% if latest_news_shout %}
+			{% for shout in latest_news_shout %}
+				<p>{% if shout.subtitle %}
+					{{ shout.subtitle }}<br/ >
+				{% endif %}
+				{{ shout.content }}</p>
+			{% endfor %}
+		{% endif %}
+		
       	<p>	{% if next_event %}
 			Next Event:<br /> 
 			{{ next_event }}<br />
 			{{ next_event.datetime|date:"j b Y" }}
 		{% endif %}
 	</p>
-    	<p>Resources update: Check out videos of all talks from the recent Bible&Church Conference</p>
     	<p>	{% if book_of_the_month %}
 			Book of the month:<br />
-			{{ book_of_the_month.title }}
+			{{ book_of_the_month.title }}<br />
+			<img src="{{ book_of_the_month.cover_image.url }}" width="170px" />
 		{% endif %}
 	</p>
     </div>
