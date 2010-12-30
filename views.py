@@ -22,7 +22,8 @@ def about(request):
 	return render_to_response('about.html', {'about_list':about_list}, context_instance=RequestContext(request))
 
 def doctrinal_statement(request):
-	return render_to_response('doctrinal_statement.html', locals(), context_instance=RequestContext(request))
+	doctrinal_statement_list = DoctrinalStatement.objects.all()
+	return render_to_response('doctrinal_statement.html', {'doctrinal_statement_list':doctrinal_statement_list}, context_instance=RequestContext(request))
 
 def partners(request):
 	return render_to_response('partners.html', locals(), context_instance=RequestContext(request))

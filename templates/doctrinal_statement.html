@@ -1,8 +1,14 @@
 {% extends "base_about.html" %}
+{% load markup %}
 
 {% block central_trunk %}  
- <div id="h1_title"><h1>Doctrinal Statement</h1></div><br />
-	<p>We are committed to the following truths:</p>
+<div id="h1_title"><h1>Doctrinal Statement</h1></div><br />
+	{% for statement in doctrinal_statement_list %}
+		{% if statement.subtitle %}<h2>{{ statement.subtitle }}</h2>{%endif%}
+		{{ statement.content|markdown }}
+	{% endfor %}
+
+<!--	<p>We are committed to the following truths:</p>
 	<p>(A) The existence of one, eternal immutable God, Creator and Lord of the universe, who in the unity of the Father, Son and the Holy Spirit, both governs all things according to his will and is accomplishing his purposes in the world and in the Church. God is sovereign in creation, revelation, redemption and final judgement.</p>
 	<p>(B) The Bible, as originally given, is the inspired, inerrant and infallible word of God. Christians must therefore submit to its supreme authority and sufficiency, both individually and corporately, in every matter of belief and conduct.</p>
 	<p>(C) The inherent value of all human beings, made by God in his own likeness, and their sinfulness and guilt since the Fall. This has rendered them subject to God’s wrath and condemnation, and has resulted in their alienation from his life, suppression of his truth, and hostility to his Word.</p>
@@ -12,5 +18,5 @@
 	<p>(G) The necessity and sufficiency of the work of the Holy Spirit for the individual’s new birth and growth to maturity, and for the Church’s empowerment in mission and constant renewal in truth, wisdom, faith, holiness and love.</p>
 	<p>(H) The one holy universal church is the Body of Christ, to which all true believers belong.  It is made visible in local congregations of baptised believers.  Gospel partnership between local churches is a vital expression of this unity for the advance of gospel. </p>
 	<p>(I ) The personal and visible return in glory of the Lord Jesus Christ to raise the dead and bring salvation and judgement to final completion. God will fully establish his kingdom when he creates a new heaven and a new earth from which evil and evildoers, suffering and death will be excluded, and in which he will be glorified for ever.</p>
-	<p>The Lord Jesus will return in person, to judge everyone, to execute God’s just condemnation on those who have not repented and to receive the redeemed to eternal glory.</p>
+	<p>The Lord Jesus will return in person, to judge everyone, to execute God’s just condemnation on those who have not repented and to receive the redeemed to eternal glory.</p>-->
 {% endblock %}	

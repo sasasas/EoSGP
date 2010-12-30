@@ -2,7 +2,7 @@ from django.db import models
 
 class About(models.Model):
 	paragraph_number = models.IntegerField()
-	subtitle = models.CharField(max_length=100, null=True)
+	subtitle = models.CharField(max_length=100, null=True, blank=True)
 	content = models.TextField()
 
 	def __unicode__(self):
@@ -13,7 +13,7 @@ class About(models.Model):
 
 class DoctrinalStatement(models.Model):
 	paragraph_number = models.IntegerField()
-	subtitle = models.CharField(max_length=100, null=True)
+	subtitle = models.CharField(max_length=100, null=True, blank=True)
 	content = models.TextField()
 
 	def __unicode__(self):
