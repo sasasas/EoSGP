@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load markup %}
 
 
 {% block sidebar1_extra %}
@@ -22,5 +23,5 @@
 <img src="/static/blog_orange.png" alt="" />
 <div id="blog_title">
     <h1>{{ latest_blog.title }}</h1></div>
-    <p>{{ latest_blog.content }}</p>
+    <p>{{ latest_blog.content|markdown }}</p>
 {% endblock %}

@@ -105,6 +105,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'django.contrib.markup',
     'django.contrib.admin',
 	'EoSGP201011.blog',
 	'EoSGP201011.content',
