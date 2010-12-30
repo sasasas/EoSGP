@@ -1,5 +1,5 @@
 from django.contrib import admin
-from EoSGP201011.content.models import About, DoctrinalStatement, Apprenticeship, LinksBlurb, Link, PartnersBlurb, Partner
+from EoSGP201011.content.models import Link, FlatPage, Partner
 
-for cls in About, DoctrinalStatement, Apprenticeship, LinksBlurb, Link, PartnersBlurb, Partner:
+for cls in Link, FlatPage, Partner:
 	admin.site.register(cls)

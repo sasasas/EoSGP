@@ -17,26 +17,18 @@ def home(request):
 		pass
 	return render_to_response('home.html', locals(), context_instance=RequestContext(request))
 
-def about(request):
-	about_list = About.objects.all()
-	return render_to_response('about.html', {'about_list':about_list}, context_instance=RequestContext(request))
-
-def doctrinal_statement(request):
-	doctrinal_statement_list = DoctrinalStatement.objects.all()
-	return render_to_response('doctrinal_statement.html', {'doctrinal_statement_list':doctrinal_statement_list}, context_instance=RequestContext(request))
+def flatpage(request, permalink):
+	get_object_or_404(FlatPage, permalink=permalink)
+	return render_to_response("%s.html" % permalink, locals(), context_instance=RequestContext(request))
 
 def partners(request):
-	partners_blurb = PartnersBlurb.objects.all()
+	partners_blurb = FlatPage.objects.get(permalink='partners')
 	partner_list = Partner.objects.all()
 	return render_to_response('partners.html', locals(), context_instance=RequestContext(request))
 
 def events(request):
 	event_list = Event.objects.filter(datetime__gte=datetime.now())	
 	return render_to_response('events.html', {'event_list':event_list}, context_instance=RequestContext(request))
-
-def apprenticeships(request):
-	apprenticeship_list = Apprenticeship.objects.all()
-	return render_to_response('apprenticeships.html', {'apprenticeship_list':apprenticeship_list}, context_instance=RequestContext(request))
 
 def resources(request, resource):
 	if resource in ['audio', 'video', 'literature']:

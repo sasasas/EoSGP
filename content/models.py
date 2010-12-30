@@ -1,48 +1,13 @@
 from django.db import models
 
-class About(models.Model):
-	paragraph_number = models.IntegerField()
+class FlatPage(models.Model):
+	permalink = models.Charfield(max_length=100, unique=True)
+	title = models.CharField(max_length=100, blank=True)
 	subtitle = models.CharField(max_length=100, null=True, blank=True)
 	content = models.TextField()
 
 	def __unicode__(self):
-		return "%d" % self.paragraph_number
-
-	class Meta:
-		ordering = ['paragraph_number']
-
-class DoctrinalStatement(models.Model):
-	paragraph_number = models.IntegerField()
-	subtitle = models.CharField(max_length=100, null=True, blank=True)
-	content = models.TextField()
-
-	def __unicode__(self):
-		return "%d" % self.paragraph_number
-
-	class Meta:
-		ordering = ['paragraph_number']
-
-class Apprenticeship(models.Model):
-	paragraph_number = models.IntegerField()
-	subtitle = models.CharField(max_length=100, null=True, blank=True)
-	content = models.TextField()
-
-	def __unicode__(self):
-		return "%d" % self.paragraph_number
-
-	class Meta:
-		ordering = ['paragraph_number']
-
-class LinksBlurb(models.Model):
-	paragraph_number = models.IntegerField()
-	subtitle = models.CharField(max_length=100, null=True, blank=True)
-	content = models.TextField()
-
-	def __unicode__(self):
-		return "%d" % self.paragraph_number
-
-	class Meta:
-		ordering = ['paragraph_number']
+		return permalink
 
 class Link(models.Model):
 	list_position_number = models.IntegerField()
@@ -54,17 +19,6 @@ class Link(models.Model):
 
 	class Meta:
 		ordering = ['list_position_number']
-
-class PartnersBlurb(models.Model):
-	paragraph_number = models.IntegerField()
-	subtitle = models.CharField(max_length=100, null=True, blank=True)
-	content = models.TextField(null=True, blank=True)
-
-	def __unicode__(self):
-		return "%d" % self.paragraph_number
-
-	class Meta:
-		ordering = ['paragraph_number']
 
 class Partner(models.Model):
 	name = models.CharField(max_length=100)
