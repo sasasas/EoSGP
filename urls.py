@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 	(r'^resources(?:/(?P<resource>\w+))?/$', views.resources),
 	(r'^events/$', views.events),
 	(r'^partners/$', views.partners),
+	(r'^contact/$', views.contact),
 	(r'^contact/thanks/$', direct_to_template, {'template' :'contact_thanks.html'}),
 	(r'^static/(?P<path>.*)$', 'django.views.static.serve',
         	{'document_root': os.path.join(os.path.dirname(__file__), 'static').replace('\\', '/')
