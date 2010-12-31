@@ -28,11 +28,18 @@ def flatpage(request, permalink):
 	return HttpResponse(template.render(RequestContext(request, {'page':page})))
 
 def partners(request):
-	page = FlatPage.objects.get(permalink='partners')
+	try:
+		page = FlatPage.objects.get(permalink='partners')
+	except ObjectDoesNotExist:
+		page = FlatPage()
 	partner_list = Partner.objects.all()
 	return render_to_response('partners.html', locals(), context_instance=RequestContext(request))
 
 def events(request):
+	try:
+		page = FlatPage.objects.get(permalink='events')
+	except ObjectDoesNotExist:
+		page = FlatPage(permalink = 'events', title = 'Events')
 	event_list = Event.objects.filter(datetime__gte=datetime.now())	
 	return render_to_response('events.html', {'event_list':event_list}, context_instance=RequestContext(request))
 
@@ -44,9 +51,17 @@ def resources(request, resource):
 	return render_to_response(filename, {}, context_instance=RequestContext(request))
 
 def links(request):
+	try:
+		page = FlatPage.objects.get(permalink='links')
+	except ObjectDoesNotExist:
+		page = FlatPage(permalink = 'links', title = 'Links')
 	return render_to_response('links.html', locals(), context_instance=RequestContext(request))
 
 def contact(request):
+	try:
+		page = FlatPage.objects.get(permalink='contact')
+	except ObjectDoesNotExist:
+		page = FlatPage(permalink = 'contact', title = 'Contact')
 	if request.method == 'POST':
 		contact_form = ContactForm(request.POST)
 		if contact_form.is_valid():
@@ -73,6 +88,3 @@ Newsletter: %s
 	else:
 		contact_form = ContactForm()
 		return render_to_response('contact.html', {'contact_form':contact_form}, context_instance=RequestContext(request))
-
-
-	
