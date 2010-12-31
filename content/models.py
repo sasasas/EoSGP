@@ -1,13 +1,13 @@
 from django.db import models
 
 class FlatPage(models.Model):
-	permalink = models.Charfield(max_length=100, unique=True)
+	permalink = models.CharField(max_length=100, unique=True)
 	title = models.CharField(max_length=100, blank=True)
 	subtitle = models.CharField(max_length=100, null=True, blank=True)
 	content = models.TextField()
 
 	def __unicode__(self):
-		return permalink
+		return self.permalink
 
 class Link(models.Model):
 	list_position_number = models.IntegerField()

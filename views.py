@@ -1,14 +1,16 @@
 from django.shortcuts import render_to_response
-from django.template import RequestContext
+from django.template.loader import get_template
+from django.template import  Context, RequestContext, TemplateDoesNotExist
 from django.core.mail import mail_admins
 from django.core.exceptions import ObjectDoesNotExist
 from blog.models import Blog
 from features.models import LatestNewsShout, Event, BookOfTheMonth
-from content.models import About, DoctrinalStatement, Apprenticeship, LinksBlurb, Link, PartnersBlurb, Partner
+from content.models import Link, Partner, FlatPage
 from EoSGP201011.forms import ContactForm
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic.simple import direct_to_template
 from datetime import datetime
+from django.shortcuts import get_object_or_404
 
 def home(request):
 	try:
@@ -18,8 +20,12 @@ def home(request):
 	return render_to_response('home.html', locals(), context_instance=RequestContext(request))
 
 def flatpage(request, permalink):
-	get_object_or_404(FlatPage, permalink=permalink)
-	return render_to_response("%s.html" % permalink, locals(), context_instance=RequestContext(request))
+	page = get_object_or_404(FlatPage, permalink=permalink)
+	try:
+		template = get_template("%s.html" % permalink)
+	except TemplateDoesNotExist:
+		template = get_template("flat_page.html")
+	return HttpResponse(template.render(RequestContext(request, {'page':page})))
 
 def partners(request):
 	partners_blurb = FlatPage.objects.get(permalink='partners')
