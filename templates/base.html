@@ -46,23 +46,23 @@ $(window).load(function() {
     <div id="latest_news"><img src="/static/latest_news_orange.png" alt="" width="170px" />
 		{% if latest_news_shout %}
 			{% for shout in latest_news_shout %}
-				<p>{% if shout.subtitle %}
-					{{ shout.subtitle }}<br/ >
+				{% if shout.subtitle %}
+					<h4>{{ shout.subtitle }}</h4>
 				{% endif %}
-				{{ shout.content }}</p>
+				<p>{{ shout.content }}</p>
 			{% endfor %}
 		{% endif %}
 		
-      	<p>	{% if next_event %}
-			Next Event:<br /> 
-			{{ next_event }}<br />
-			{{ next_event.datetime|date:"j b Y" }}
+      	{% if next_event %}
+			<h4>Next Event</h4> 
+			<p>{{ next_event }}<br />
+			{{ next_event.datetime|date:"j b Y" }}</p>
 		{% endif %}
-	</p>
-    	<p>	{% if book_of_the_month %}
-			Book of the month:<br />
-			{{ book_of_the_month.title }}<br />
-			<img src="{{ book_of_the_month.cover_image.url }}" width="170px" />
+
+    	{% if book_of_the_month %}
+			<h4>Book of the month</h4>
+			<p>{{ book_of_the_month.title }}<br />
+			<img src="{{ book_of_the_month.cover_image.url }}" width="170px" /></p>
 		{% endif %}
 	</p>
     </div>
