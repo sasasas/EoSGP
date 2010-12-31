@@ -28,7 +28,7 @@ def flatpage(request, permalink):
 	return HttpResponse(template.render(RequestContext(request, {'page':page})))
 
 def partners(request):
-	partners_blurb = FlatPage.objects.get(permalink='partners')
+	page = FlatPage.objects.get(permalink='partners')
 	partner_list = Partner.objects.all()
 	return render_to_response('partners.html', locals(), context_instance=RequestContext(request))
 

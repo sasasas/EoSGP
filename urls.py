@@ -8,8 +8,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	(r'^(?:home/)?$', views.home),
-	(r'^perma/(?P<permalink>.*)/$', views.flatpage),
 	(r'^resources(?:/(?P<resource>\w+))?/$', views.resources),
+	(r'^events/$', views.events),
+	(r'^partners/$', views.partners),
 	(r'^contact/thanks/$', direct_to_template, {'template' :'contact_thanks.html'}),
 	(r'^static/(?P<path>.*)$', 'django.views.static.serve',
         	{'document_root': os.path.join(os.path.dirname(__file__), 'static').replace('\\', '/')
@@ -27,4 +28,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+
+    # Catchall for the semi-static pages. Will give confusing errors for 404 though, so be careful!
+	(r'^(?P<permalink>.*)/$', views.flatpage),
 )

@@ -2,11 +2,9 @@
 {% load markup %}
 
 {% block central_trunk %}
-<div id="h1_title"><h1>Partners</h1></div>
-    	{% for blurb in partners_blurb %}
-		{% if blurb.subtitle %}<h2>{{ blurb.subtitle }}</h2>{%endif%}
-		{{ blurb.content|markdown }}
-	{% endfor %}	
+<div id="h1_title"><h1>{{page.title}}</h1></div>
+		{% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{%endif%}
+		{{ page.content|markdown }}
 
 	<ul style="list-style-type: none;">
 	{% for partner in partner_list %}
