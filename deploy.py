@@ -1,11 +1,13 @@
 import os
 import sys
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'EoSGP201011.settings_production'
-
-path = '/home/ruby/EoSGP201011'
-if path not in sys.path:
+paths = ['/home/ruby/EoSGP201011', '/home/ruby']
+for path in paths:
+  if path not in sys.path:
     sys.path.append(path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings_production'
+
 
 import django.core.handlers.wsgi
 application = django.core.handlers.wsgi.WSGIHandler()
