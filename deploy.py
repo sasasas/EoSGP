@@ -1,7 +1,7 @@
 import os
 import sys
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'EoSGP201011.settings_production'
 
 path = '/home/ruby/EoSGP201011'
 if path not in sys.path:
