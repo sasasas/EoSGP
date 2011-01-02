@@ -84,7 +84,7 @@ Newsletter: %s
 			)
 			return HttpResponseRedirect('/contact/thanks')
 		else:
-			return render_to_response('contact.html', {'contact_form':contact_form}, context_instance=RequestContext(request))
+			return render_to_response('contact.html', {'contact_form':contact_form, 'page':page}, context_instance=RequestContext(request))
 	else:
 		contact_form = ContactForm()
-		return render_to_response('contact.html', {'contact_form':contact_form}, context_instance=RequestContext(request))
+		return render_to_response('contact.html', {'contact_form':contact_form, 'page':page}, context_instance=RequestContext(request))
