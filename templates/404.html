@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block central_trunk %}
+<div id="h1_title"><h1>{{page.title}}</h1></div>
+		{%if page.subtitle %}<h2>{{ page.subtitle }}</h2>{%endif%}
+        <p> Sorry, but this page has not been found.</p>
+{% endblock %}	
