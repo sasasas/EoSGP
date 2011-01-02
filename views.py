@@ -20,9 +20,9 @@ def home(request):
 	return render_to_response('home.html', locals(), context_instance=RequestContext(request))
 
 def flatpage(request, permalink):
-	page = get_object_or_404(FlatPage, permalink=permalink)
+	page = FlatPage.objects.get_page_or_blank(permalink=permalink)
 	try:
-		template = get_template("%s.html" % permalink)
+		template = get_template(page.template_file)
 	except TemplateDoesNotExist:
 		template = get_template("flat_page.html")
 	return HttpResponse(template.render(RequestContext(request, {'page':page})))
