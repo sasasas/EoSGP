@@ -10,3 +10,7 @@ DATABASES = {
         'NAME': '/var/EoSGP201011/database.db',
     }
 }
+
+ADMINS = (
+	('Tze-Hung Seeto', 'thseeto@yahoo.co.uk'),
+)
