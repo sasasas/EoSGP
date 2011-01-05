@@ -65,21 +65,12 @@ def contact(request):
 	if request.method == 'POST':
 		contact_form = ContactForm(request.POST)
 		if contact_form.is_valid():
-			email_body = '''
-You have received a request from %s at %s (minister: %s) for information on becoming a partner of EoSGP (%s). 
-
-E-mail: %s 
-
-Address: %s 
-
-Message: %s 
-
-Newsletter: %s
-'''
 			cd = contact_form.cleaned_data
+			email_template = get_template('email/contact.email')
+			email_body = email_template.render(Context(cd))
 			mail_admins(
 				'Partnership info request: %s' % cd['church_or_org'],
-				 email_body % (cd['name'], cd['church_or_org'], cd['minister_or_head'], cd['org_type'], cd['email'], cd['address'], cd['message'], cd['newsletter']),
+				 email_body),
 				fail_silently=False 
 			)
 			return HttpResponseRedirect('/contact/thanks')
