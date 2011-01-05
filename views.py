@@ -70,7 +70,7 @@ def contact(request):
 			email_body = email_template.render(Context(cd))
 			mail_admins(
 				'Partnership info request: %s' % cd['church_or_org'],
-				 email_body),
+				email_body,
 				fail_silently=False 
 			)
 			return HttpResponseRedirect('/contact/thanks')
