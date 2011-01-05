@@ -66,7 +66,7 @@ def contact(request):
 		contact_form = ContactForm(request.POST)
 		if contact_form.is_valid():
 			cd = contact_form.cleaned_data
-			email_template = get_template('email/contact.email')
+			email_template = get_template('emails/contact.email')
 			email_body = email_template.render(Context(cd))
 			mail_admins(
 				'Partnership info request: %s' % cd['church_or_org'],
