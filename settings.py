@@ -1,4 +1,4 @@
-# Django settings for EoSGP201011 project.
+# Django settings for EoSGP project.
 import os
 
 DEBUG = True
@@ -78,7 +78,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'EoSGP201011.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -93,7 +93,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
-    'EoSGP201011.context_processors.grab_latest_news',
+    'context_processors.grab_latest_news',
 )
 
 STATIC_DOC_ROOT = 	os.path.join(os.path.dirname(__file__), 'static').replace('\\', '/'),
@@ -107,9 +107,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.markup',
     'django.contrib.admin',
-	'EoSGP201011.blog',
-	'EoSGP201011.content',
-	'EoSGP201011.features',
+	'blog',
+	'content',
+	'features',
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

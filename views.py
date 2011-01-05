@@ -6,7 +6,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from blog.models import Blog
 from features.models import LatestNewsShout, Event, BookOfTheMonth
 from content.models import Link, Partner, FlatPage
-from EoSGP201011.forms import ContactForm
+from forms import ContactForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic.simple import direct_to_template
 from datetime import datetime
