@@ -12,7 +12,7 @@ archive_info = {
 	'queryset': Blog.objects.all(),
 	'date_field': 'datetime',
 	'template_name': 'blog_archive.html',
-	#'template_object_name': 'blog',
+	'template_object_name': 'blogs',
 	#'allow_empty': 'False',
 }
 
