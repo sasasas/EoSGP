@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block central_trunk %}
+<div id="h1_title">
+    <h1>Archive</h1></div><br />
+	<ul>
+OBJECT:{% debug %}
+	{% for blog in object_list %}
+		<li>	<!--{{ blog.datetime }}<br />
+			{{ blog.user }}<br />-->
+			{{ blog.title }}<!--<br />
+			{{ blog.content }}-->
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}	
+

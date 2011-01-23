@@ -1,13 +1,24 @@
 from django.conf.urls.defaults import *
+from django.views.generic import date_based
 from django.views.generic.simple import direct_to_template
 import os
 from EoSGP201011 import views
+from EoSGP201011.blog.models import Blog
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
+archive_info = {
+	'queryset': Blog.objects.all(),
+	'date_field': 'datetime',
+	'template_name': 'blog_archive.html',
+	#'template_object_name': 'blog',
+	#'allow_empty': 'False',
+}
+
 urlpatterns = patterns('',
     	(r'^(?:home/)?$', views.home),
+	(r'^archive/$', date_based.archive_index, archive_info),
 	(r'^about/$', views.about),
 	(r'^partners/$', views.partners),
 	(r'^about/aims_values/$', views.about),
