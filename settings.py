@@ -1,11 +1,11 @@
-# Django settings for EoSGP201011 project.
+# Django settings for EoSGP project.
 import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-	('Test', 'sasasas@gmail.com'),
+	('Chris Causer', 'chy.causer@gmail.com'),
     # ('Your Name', 'your_email@domain.com'),
 )
 
@@ -48,17 +48,17 @@ USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__),'uploaded_graphics/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/uploaded_graphics/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '9r8fvkbxnh_$dhc(do3dg4c8mubv%=au^nqqlu*k1n(dx&+%($'
@@ -78,7 +78,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'EoSGP201011.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -93,15 +93,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
-    'EoSGP201011.context_processors.grab_latest_news',
-#    'django.contrib.staticfiles.context_processors.staticfiles',
+    'context_processors.grab_latest_news',
 )
-
-
-#STATICFILES_FINDERS = (
-#	"django.contrib.staticfiles.finders.FileSystemFinder",
-#	"django.contrib.staticfiles.finders.AppDirectoriesFinder"
-#)
 
 STATIC_DOC_ROOT = 	os.path.join(os.path.dirname(__file__), 'static').replace('\\', '/'),
 
@@ -112,13 +105,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # Uncomment the next line to enable the admin:
+    'django.contrib.markup',
     'django.contrib.admin',
-	#'django.contrib.staticfiles',
-	'EoSGP201011.blog',
-	'EoSGP201011.content',
-	'EoSGP201011.features',
+	'blog',
+	'content',
+	'features',
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = '/tmp/emailtestfolder'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+

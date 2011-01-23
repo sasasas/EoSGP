@@ -1,0 +1,22 @@
+Hello,
+
+You have received a request for more information on becoming a member of EoSGP from {{org_type}}:
+
+Name: {{name}}
+Church: {{church_or_org}}
+Minister: {{minister_or_head}}
+
+
+E-mail: {{email}}
+
+Address: 
+=========
+{{address}}
+=========
+
+Message: 
+=========
+{{message}}
+=========
+
+Newsletter: {{newsletter}}

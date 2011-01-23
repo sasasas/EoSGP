@@ -2,11 +2,9 @@
 
 {% block central_trunk %}
 <div id="h1_title">
-    <h1>Contact</h1></div>
+    <h1>{{page.title}}</h1></div>
 <div class="no_bullets" >
-	<p>For general enquiries, please email eosgp@gmail.com.</p>
-	<p>If you are interested in becoming an EoSGP partner, please fill in the form below.</p>
-
+	{{page.content}}
 		{% if contact_form.errors %}
 			<p style="color: red;">
 				Please correct the error{{ contact_form.errors|pluralize }} below.
@@ -21,4 +19,4 @@
 	</form>
 </div>
 {% endblock %}
-	
+

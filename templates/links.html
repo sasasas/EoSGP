@@ -1,13 +1,9 @@
 {% extends "base.html" %}
+{% load markup %}
 
 {% block central_trunk %}
     	<div id="h1_title">
-    		<h1>Links</h1>
+    		<h1>{{page.title}}</h1>
 	</div>
-    		<p>Below are links to other parachurch organisations that are affiliated to EoSGP.<br />
-      		<br />
-    		<h2>&nbsp;</h2>
-    		<p>&nbsp;</p>
-    		<p>&nbsp;</p>
-    		<p>&nbsp;</p>
-{% endblock %}
+			{{page.content|markdown}}
+    		{% endblock %}

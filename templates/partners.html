@@ -1,16 +1,30 @@
 {% extends "base.html" %}
+{% load markup %}
 
 {% block central_trunk %}
-    	<div id="h1_title">
-    		<h1>Partners</h1>
-	</div>
-    		<h2>Member Churches</h2>
+<div id="h1_title"><h1>{{page.title}}</h1></div>
+		{% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{%endif%}
+		{{ page.content|markdown }}
+
+	<ul style="list-style-type: none;">
+	{% for partner in partner_list %}
+		<li style="padding: 10px;">	
+			<strong>{{ partner.name }}</strong><br />
+			{{ partner.address }}<br />
+			{{ partner.town }}<br />
+			{{ partner.postcode }}<br />
+			<em>Tel: </em>{{ partner.telephone }}<br />
+			<em>E-mail: </em>{{ partner.email }}<br />
+		</li>
+	{% endfor %}
+	</ul>
+<!--<h2>Member Churches</h2>
     		<p>Charlotte Baptist Chapel<br />
       		204 Rose Street<br />
       		Edinburgh<br />
       		EH2 4AZ<br />
     		tel: 0131 225 4812<br />
-    		email: 
+    		email:
     		info@charlottechapel.org<br /><br />
       		Carrubbers Christian Center<br />
       		65 High Street<br />
@@ -44,5 +58,5 @@
       		<br />
       		email: admin@niddrie.org
       		<br /><br />
-    		</p>
+    		</p>-->
 {% endblock %}

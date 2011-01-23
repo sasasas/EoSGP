@@ -5,9 +5,10 @@
     <h1>Upcoming Events</h1></div><br />
 	<ul>
 	{% for event in event_list %}
-		<li>	{{ event.name }}<br />
+		<li>	<strong>{{ event.name }}</strong><br />
 			{{ event.datetime|date:"P, D j M, Y" }}<br />
-			{{ event.venue }}
+			{{ event.venue }}<br />
+			{%if event.detail %}* {{ event.detail }}{%endif%}
 		</li>
 	{% endfor %}
 	</ul>

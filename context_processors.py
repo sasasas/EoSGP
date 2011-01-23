@@ -1,11 +1,15 @@
 from django.core.exceptions import ObjectDoesNotExist
 from datetime import datetime
-from features.models import Event, BookOfTheMonth
+from features.models import LatestNewsShout, Event, BookOfTheMonth
 
 def grab_latest_news(request):
 	try:
-		next_event = Event.objects.filter(datetime__gte=datetime.now())[0]
+		latest_news_shout = LatestNewsShout.objects.all()
 	except ObjectDoesNotExist:
+		pass
+	try:
+		next_event = Event.objects.filter(datetime__gte=datetime.now())[0]
+	except (ObjectDoesNotExist, IndexError):
 		pass
 	try:
 		books_currentyear = BookOfTheMonth.objects.filter(date__year=datetime.now().year)	

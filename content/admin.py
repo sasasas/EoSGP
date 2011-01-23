@@ -1,4 +1,5 @@
 from django.contrib import admin
-from EoSGP201011.content.models import About
+from content.models import Link, FlatPage, Partner
 
-admin.site.register(About)
+for cls in Link, FlatPage, Partner:
+	admin.site.register(cls)

@@ -43,45 +43,19 @@ $(window).load(function() {
   <!-- end #header --></div>
 
   <div id="sidebar2">
-    <div id="latest_news"><img src="/static/latest_news_orange.png" alt="" width="170px" />
-		{% if latest_news_shout %}
-			{% for shout in latest_news_shout %}
-				{% if shout.subtitle %}
-					<h4>{{ shout.subtitle }}</h4>
-				{% endif %}
-				<p>{{ shout.content }}</p>
-			{% endfor %}
-		{% endif %}
-		
-      	{% if next_event %}
-			<h4>Next Event</h4>
-			<p>{{ next_event }}<br />
-			{{ next_event.datetime|date:"j b Y" }}</p>
-		{% endif %}
-
-    	{% if book_of_the_month %}
-			<h4>Book of the month</h4>
-			<p>{{ book_of_the_month.title }}<br />
-			<img src="{{ book_of_the_month.cover_image.url }}" width="170px" /></p>
-		{% endif %}
-	</p>
-    </div>
   <!-- end #sidebar2 --></div>
   <div id="sidebar1"><img src="/static/menu_orange.png" alt="" width="170px" />
     <div class="menu"><a href="/home/">Home</a></div>
     <div class="menu"><a href="/about/">About</a></div>
-		{% block about_subs %}{% endblock %}
     <div class="menu"><a href="/partners/">Partners</a></div>
     <div class="menu"><a href="/events/">Events</a></div>
      <div class="menu"><a href="/apprenticeships/">Apprenticeships</a></div>
     <div class="menu"><a href="/resources/">Resources</a></div>
-		{% block resources_subs %}{% endblock %}
      <div class="menu"><a href="/links/">Links</a></div>
     <div class="menu"><a href="/contact/">Contact/sign-up</a></div>
-		{% block sidebar1_extra %}{% endblock %}
   <!-- end #sidebar1 --></div>
   <div id="mainContent">
-		{% block central_trunk %}{% endblock %}
+		Sorry, but something has gone wrong with the site. An admin has been informed.
 <!-- end #mainContent --></div>
 	<!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats --><br class="clearfloat" />
    <div id="footer">

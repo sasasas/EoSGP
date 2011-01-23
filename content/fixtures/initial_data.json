@@ -1,0 +1,140 @@
+[
+  {
+    "pk": 1,
+    "model": "content.flatpage",
+    "fields": {
+      "content": "Why do we exist?\r\n----------------\r\n\r\nWe exist to glorify God by:\r\n\r\n* Expanding gospel ministry in the East of Scotland\r\n* Encouraging Bible believing evangelicals to contend for Biblical Christianity\r\n* Promoting co operation between gospel churches\r\n\r\nHow do we aim to achieve this?\r\n--------\r\n\r\nWe seek to do this by:\r\n\r\n* Multiplying congregations/fellowships\r\n* Promoting apprenticeship schemes\r\n* Sending people into gospel ministry\r\n* Providing a network of support for gospel churches in the East of Scotland through training for evangelism, church planting and gospel ministry\r\n\r\nWhat difference will this make?\r\n---------\r\n\r\nIn Jan 2010 we set ourselves five-year goals which include:\r\n\r\n* Starting 5 congregations/fellowships from within our partnership\r\n* Training 20 men and women through a ministry apprenticeship scheme\r\n* Enabling the establishment of a suitable full time ministry training course in the East of Scotland\r\n* Sending 15 men and women into gospel ministry \r\n* A regular programme of events that provide information, support, fellowship and training across the region.\r\n\r\nWe do not wish to undermine good things going on in our region or encourage people to think in a separatist way, but we do want to encourage those with opportunity to be involved in promoting gospel ministry and providing support for that process.\r\n\r\nWe are committed to growing gospel ministry by:\r\n\r\n* Strengthening existing local churches as we renew our gospel vision and Biblical foundations\r\n* Training members of existing congregations for a wide range of gospel ministries in the local church\r\n* Encouraging suitable gifted men and women to consider going into full time gospel ministry\r\n* Promoting schemes for ministry trainees (apprentices)\r\n* Starting congregations in areas where gospel ministry is weak or non-existent\r\n* Arranging regular opportunities for Church leaders to meet for mutual support, encouragement, prayer, and ongoing ministry training",
+      "permalink": "about",
+      "subtitle": "",
+      "template_file": "about.html",
+      "title": "About"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "content.flatpage",
+    "fields": {
+      "content": "We are committed to the following truths:\r\n\r\n(A) The existence of one, eternal immutable God, Creator and Lord of the universe, who in the unity of the Father, Son and the Holy Spirit, both governs all things according to his will and is accomplishing his purposes in the world and in the Church. God is sovereign in creation, revelation, redemption and final judgement.\r\n\r\n(B) The Bible, as originally given, is the inspired, inerrant and infallible word of God. Christians must therefore submit to its supreme authority and sufficiency, both individually and corporately, in every matter of belief and conduct.\r\n\r\n(C) The inherent value of all human beings, made by God in his own likeness, and their sinfulness and guilt since the Fall. This has rendered them subject to God\u2019s wrath and condemnation, and has resulted in their alienation from his life, suppression of his truth, and hostility to his Word.\r\n\r\n(D) The Lord Jesus Christ, God\u2019s incarnate Son, is fully God and fully man yet without sin; he was born of a virgin; he suffered and died on the cross, was raised bodily from death and is now reigning over heaven and earth.\r\n\r\n(E) Salvation from sin; its\u2019 guilt, penalty and power, is solely through the work of Jesus Christ \u2014 his perfect obedience, penal substitutionary death, bodily resurrection and exaltation as Lord. As fully God and fully man he is the only mediator between God and man. There is salvation through no other person, creed, process or power. The entirety of a sinner\u2019s justification, from beginning to end, is by his grace alone appropriated through faith alone.\r\n\r\n(F) Before the foundation of the world God in his mercy chose a people for himself out of the human race. He did not choose them on the basis of their foreseen faith or works, but solely on the basis of his perfect desire to glorify himself in his Son by their redemption.\r\n\r\n(G) The necessity and sufficiency of the work of the Holy Spirit for the individual\u2019s new birth and growth to maturity, and for the Church\u2019s empowerment in mission and constant renewal in truth, wisdom, faith, holiness and love.\r\n\r\n(H) The one holy universal church is the Body of Christ, to which all true believers belong.  It is made visible in local congregations of baptised believers.  Gospel partnership between local churches is a vital expression of this unity for the advance of gospel.\r\n\r\n(I ) The personal and visible return in glory of the Lord Jesus Christ to raise the dead and bring salvation and judgement to final completion. God will fully establish his kingdom when he creates a new heaven and a new earth from which evil and evildoers, suffering and death will be excluded, and in which he will be glorified for ever.\r\n\r\nThe Lord Jesus will return in person, to judge everyone, to execute God\u2019s just condemnation on those who have not repented and to receive the redeemed to eternal glory",
+      "permalink": "about/doctrinal_statement",
+      "subtitle": "",
+      "template_file": "about.html",
+      "title": "About - Doctrinal Statement"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "content.flatpage",
+    "fields": {
+      "content": "There is a great need for people to be going into full-time paid gospel ministry. Apprentice schemes offer a unique opportunity for individuals to commit themselves to learning about gospel ministry as a part of a local congregation.\n\nIs it for me?\n------------\n\nIt may be,\u00a0if you eagerly desire to serve Jesus, want to learn how to teach God's word better and get some practical experience of teaching the Bible into people's lives as a part of a local church family.\n\nWhether you end up in full time ministry or not your time as an apprentice will equip you for life.\u00a0 Do ask the advice of your church leader who knows you as you consider this.\n\nApprenticeships currently on offer:\n-----------------------\n\nSt Catherines Argyle - from September 2011\n\nAs a church we want to equip more and more people to serve Jesus. The biggest formal part of this training vision is our Ministry Associate Programme. For one or two years, people come and serve here, receiving training, leading ministry and serving practically. This provides a wonderful opportunity to grow in maturity and competence. It can also help individuals to think through whether full-time Gospel ministry might be a good fit for them in the longer term. [more...]\n\nCharlotte Baptist Chapel - from September 2011 (TBC)",
+      "permalink": "apprenticeships",
+      "subtitle": null,
+      "template_file": "flat_page.html",
+      "title": "Apprenticeships"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "content.flatpage",
+    "fields": {
+      "content": "Links to other Church sites",
+      "permalink": "links",
+      "subtitle": null,
+      "template_file": "flat_page.html",
+      "title": "Links"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "content.flatpage",
+    "fields": {
+      "content": "Member Churches\n---------------\n",
+      "permalink": "partners",
+      "subtitle": null,
+      "template_file": "flat_page.html",
+      "title": "Partners"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "content.flatpage",
+    "fields": {
+      "content": "For general enquiries, please email eosgp@gmail.com.\n\nIf you are interested in becoming an EoSGP partner, please fill in the form below.\n\n",
+      "permalink": "contact",
+      "subtitle": "",
+      "template_file": "contact.html",
+      "title": "Contact"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "content.partner",
+    "fields": {
+      "town": "Edinburgh",
+      "name": "Carrubbers Christian Center",
+      "telephone": "0131 556 2626",
+      "postcode": "EH1 1SR",
+      "address": "65 High Street",
+      "email": "office@carrubbers.org"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "content.partner",
+    "fields": {
+      "town": "Edinburgh",
+      "name": "Charlotte Baptist Chapel",
+      "telephone": "0131 225 4812",
+      "postcode": "EH2 4AZ",
+      "address": "204 Rose Street",
+      "email": "info@charlottechapel.org"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "content.partner",
+    "fields": {
+      "town": "Edinburgh",
+      "name": "New Restalrig",
+      "telephone": "",
+      "postcode": "EH8 7EZ",
+      "address": "1a Willowbrae Road",
+      "email": ""
+    }
+  },
+  {
+    "pk": 6,
+    "model": "content.partner",
+    "fields": {
+      "town": "Edinburgh",
+      "name": "Niddrie Community Church",
+      "telephone": "0131 669 9400",
+      "postcode": "EH16 4RY",
+      "address": "12 Hay Drive",
+      "email": "admin@niddrie.org"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "content.partner",
+    "fields": {
+      "town": "Edinburgh",
+      "name": "St Catherine\u2019s Argyle Church",
+      "telephone": "0131 667 7220",
+      "postcode": "EH9 1TY",
+      "address": "61-63 Grange Road",
+      "email": "fiona@stcaths.org"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "content.partner",
+    "fields": {
+      "town": "Edinburgh",
+      "name": "St Columba's Free Church",
+      "telephone": "0131 225 3505",
+      "postcode": "EH1 2PW",
+      "address": "1 Johnston Terrace",
+      "email": "office@stcolumbas.info"
+    }
+  }
+]
