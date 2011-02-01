@@ -127,10 +127,36 @@ body  {
 	height: 1.5em;
 	text-align: left;
 	padding: 0px 0px 0px 20px;
+	border-top: 1px dashed #000;
+}
+
+.menunoborder {
+	width: 9em;
+	height: 1.5em;
+	text-align: left;
+	padding: 0px 0px 0px 20px;
+}
+
+.menubottomborder {
+	width: 9em;
+	height: 1.5em;
+	text-align: left;
+	padding: 0px 0px 0px 20px;
+	border-top: 1px dashed #000;
 	border-bottom: 1px dashed #000;
 }
 
 .menu a {
+	color: black;
+	text-decoration: none;
+}
+
+.menunoborder a {
+	color: black;
+	text-decoration: none;
+}
+
+.menubottomborder a {
 	color: black;
 	text-decoration: none;
 }
