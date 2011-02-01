@@ -17,3 +17,4 @@ def grab_latest_news(request):
 	except ObjectDoesNotExist:
 		pass
 	return locals()
+

@@ -3,13 +3,17 @@
 
 
 {% block sidebar1_extra %}
-<!--
+
    <div id="archive_title"><img src="/static/archive_orange.png" alt="" /></div>
-	<div id="archive">January<br />
-        February<br />
-        March<br />
+	<div id="archive">
+		{%for date in month_list%}
+			<a href="/archive/2011/{{date.month}}">{{date|date:"F"}}</a><br />
+		{%endfor%}
+
+		{%for date in year_list%}
+			<a href="/archive/{{date.year}}">{{date.year}}</a><br />
+		{%endfor%}
 	</div>
--->
 {% endblock %}
 
 

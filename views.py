@@ -15,6 +15,8 @@ from django.shortcuts import get_object_or_404
 def home(request):
 	try:
 		latest_blog = Blog.objects.all()[0]
+		year_list = Blog.objects.dates('datetime', 'year')[::-1]
+		month_list = Blog.objects.filter(datetime__year = datetime.now().year).dates('datetime', 'month')[::-1]
 	except (ObjectDoesNotExist, IndexError):
 		pass
 	return render_to_response('home.html', locals(), context_instance=RequestContext(request))

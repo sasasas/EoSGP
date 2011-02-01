@@ -13,13 +13,25 @@ archive_info = {
 	'date_field': 'datetime',
 	'template_name': 'blog_archive.html',
 	'template_object_name': 'blogs',
-	#'allow_empty': 'False',
+	'num_latest': False
 }
+
+archive_year = {
+	'queryset': Blog.objects.all(),
+	'date_field': 'datetime',
+	'template_name': 'blog_archive_year.html',
+	'make_object_list': True,
+
+}
+
+
 
 urlpatterns = patterns('',
     	(r'^(?:home/)?$', views.home),
 	(r'^events/$', views.events),
 	(r'^partners/$', views.partners),
+	(r'^archive/$', date_based.archive_index, archive_info),
+	(r'^archive/(?P<year>20\d\d)/$', date_based.archive_year, archive_year),
 	(r'^links/$', views.links),
 	(r'^contact/$', views.contact),
 	(r'^contact/thanks/$', direct_to_template, {'template' :'contact_thanks.html'}),
