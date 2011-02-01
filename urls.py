@@ -18,7 +18,6 @@ archive_info = {
 
 urlpatterns = patterns('',
     	(r'^(?:home/)?$', views.home),
-	(r'^resources(?:/(?P<resource>\w+))?/$', views.resources),
 	(r'^events/$', views.events),
 	(r'^partners/$', views.partners),
 	(r'^links/$', views.links),
