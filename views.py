@@ -43,13 +43,6 @@ def events(request):
 	event_list = Event.objects.filter(datetime__gte=datetime.now())	
 	return render_to_response('events.html', {'event_list':event_list}, context_instance=RequestContext(request))
 
-def resources(request, resource):
-	if resource in ['audio', 'video', 'literature']:
-		filename = 'resources_%s.html' % resource
-	else:
-		filename = 'resources.html'
-	return render_to_response(filename, {}, context_instance=RequestContext(request))
-
 def links(request):
 	try:
 		page = FlatPage.objects.get(permalink='links')

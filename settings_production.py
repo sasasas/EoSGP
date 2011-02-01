@@ -12,5 +12,5 @@ DATABASES = {
 }
 
 ADMINS = (
-	('Tze-Hung Seeto', 'thseeto@yahoo.co.uk'),
+	('EoSGP Admins', 'eos.gospelpartnership@gmail.com'),
 )
