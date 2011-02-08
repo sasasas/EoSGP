@@ -2,17 +2,17 @@
 {% load markup %}
 
 {% block central_trunk %}
-DATELIST:
-{% for date in date_list %}
-{{ date.month }}
-{% endfor %}
 <div id="h1_title">
-    <h1>Archive</h1></div><br />
+	{% for date in date_list %}
+    		<h1>Archive - {{ date.year }}</h1></div><br />
+	{% endfor %}
 	<ul>
 	{% for blog in object_list %}
 		<li>	{{ blog.datetime }}<br />
-			{{ blog.user }}<br />
-			{{ blog.title }}</li>
+			<b>{{ blog.title }}</b><br />
+			<small><i>by {{ blog.user }}</i><br />
+			{{ blog.content|markdown }}</small><br />
+		</li>
 	{% endfor %}
 	</ul>
 {% endblock %}	
