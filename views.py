@@ -16,6 +16,7 @@ def home(request):
 	try:
 		latest_blog = Blog.objects.all()[0]
 		year_list = Blog.objects.dates('datetime', 'year')[::-1]
+		current_year = datetime.now().year
 		month_list = Blog.objects.filter(datetime__year = datetime.now().year).dates('datetime', 'month')[::-1]
 	except (ObjectDoesNotExist, IndexError):
 		pass
